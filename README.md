@@ -2,6 +2,8 @@
 
 ```sh
 $ gem install jekyll
+$ jekyll build --watch
+
 $ npm install grunt --save-dev 
 $ npm install
 
