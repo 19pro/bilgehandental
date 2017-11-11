@@ -100,8 +100,8 @@
         
         <div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8 form">
             <h3><svg class="icon icon-envelope-o"><use xlink:href="#icon-envelope-o"></use></svg>Randevu Al</h3>
-            <!--form action="https://getsimpleform.com/messages?form_api_token=bf03ed7e99824273d92798b4ae4a63fa" method="post"-->
-	    <form method="POST" action="http://formspree.io/nemoxn@gmail.com">
+            <form action="https://getsimpleform.com/messages?form_api_token=bf03ed7e99824273d92798b4ae4a63fa" method="post" id="contact">
+	    <!--form method="POST" action="http://formspree.io/nemoxn@gmail.com"-->
                 <div class="form-field">
                     <input name="name" type="text" placeholder="Ad Soyad" required>
                 </div>
@@ -530,45 +530,13 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://www.jqueryscript.net/demo/Basic-Math-Captcha-Plugin/jquery.captcha.basic.min.js"></script>	
     <script src="/bilgehandental/js/all.min.js"></script>
 
-<script>
-// magic.js
-$(document).ready(function() {
-
-    // process the form
-    $('form').submit(function(event) {
-
-        // get the form data
-        // there are many ways to get this data using jQuery (you can use the class or id also)
-        var formData = {
-            'name'              : $('input[name=name]').val(),
-	    'phone'             : $('input[name=phone]').val(),
-            'email'             : $('input[name=email]').val(),
-            'comments'          : $('input[name=comments]').val()
-        };
-
-        // process the form
-        $.ajax({
-            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-            url         : 'http://formspree.io/nemoxn@gmail.com', // the url where we want to POST
-            data        : formData, // our data object
-            dataType    : 'json', // what type of data do we expect back from the server
-        })
-            // using the done promise callback
-            .done(function(data) {
-
-                // log data to the console so we can see
-                console.log(data); 
-
-                // here we will handle errors and validation messages
-            });
-
-        // stop the form from submitting the normal way and refreshing the page
-        event.preventDefault();
-    });
-
-});
+<script type="text/javascript">
+	$(document).ready(function () {
+          $('#contact').captcha();
+      });
 </script>
 	
 </body>
